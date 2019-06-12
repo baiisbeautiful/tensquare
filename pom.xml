@@ -6,7 +6,9 @@
 	<modules>
 		<module>tensquare_common</module>
 		<module>tensquare_base</module>
-	</modules>
+        <module>tensquare_recruit</module>
+        <module>tensquare_qa</module>
+    </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>

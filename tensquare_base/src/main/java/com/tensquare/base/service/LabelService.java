@@ -3,6 +3,8 @@ package com.tensquare.base.service;
 import com.tensquare.base.dao.LabelDao;
 import com.tensquare.base.pojo.Label;
 import com.tensquare.common.util.IdWorker;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
@@ -80,5 +82,17 @@ public class LabelService {
                  return cb.and(predicateList.toArray(new Predicate[predicateList.size()]));
             }
         };
+    }
+
+
+    public List<Label> findSearch(Map searchMap) {
+        Specification<Label> spcification = createSpcification(searchMap);
+        return labelDao.findAll(spcification);
+    }
+
+    public Page<Label> findSearch(Map searchMap, int page, int size) {
+        Specification<Label> spcification = createSpcification(searchMap);
+        PageRequest pageRequest = PageRequest.of(page - 1, size);
+        return labelDao.findAll(spcification,pageRequest);
     }
 }
