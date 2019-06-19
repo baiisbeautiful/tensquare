@@ -70,8 +70,10 @@ public class LabelController {
      */
     @GetMapping("/{labelid}")
     public Result findById(@PathVariable("labelid")String id){
-        Label label=labelService.findById(id);
-        return new Result(true,StatusCode.OK,"查询成功",label);
+        System.out.println("NO.1");
+        return new Result(true,StatusCode.OK,"查询成功",labelService.findById(id));
+       /* Label label=labelService.findById(id);
+        return new Result(true,StatusCode.OK,"查询成功",label);*/
     }
 
     /**

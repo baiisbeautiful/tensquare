@@ -11,6 +11,13 @@
         <module>tensquare_article</module>
         <module>tensquare_spit</module>
 		<module>tensquare_search</module>
+        <module>tensquare_user</module>
+        <module>tensquare_eureka</module>
+        <module>tensquare_friend</module>
+        <module>tensquare_manager</module>
+        <module>tensquare_web</module>
+        <module>tenquare_config</module>
+		<module>tensquare_config</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -23,6 +30,19 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>shicifang</name>
 	<description>Demo project for Spring Boot</description>
+	<!--spring cloud-->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Greenwich.BUILD-SNAPSHOT</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 
 	<properties>
 		<java.version>1.8</java.version>

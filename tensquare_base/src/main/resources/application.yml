@@ -2,7 +2,7 @@ server:
   port: 9001
 spring:
   application:
-    name: tensquare-base#指定服务名
+    name: tensquare-base #指定服务名
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/tensquare_base?serverTimezone=CTT&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
@@ -12,3 +12,9 @@ spring:
     database: mysql
     show-sql: true
     generate-ddl: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6868/eureka
+  instance:
+    prefer-ip-address: true
